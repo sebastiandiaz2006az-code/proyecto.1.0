@@ -10,10 +10,14 @@
             background-color: #f4f4f4;
         }
         nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
         nav a {
             color: white;
             margin: 10px;
@@ -26,14 +30,16 @@
         .container {
             padding: 20px;
         }
-        .card {
-            background: white;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
+       .card {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+
+    animation: aparecer 1s ease;
+}
         .card:hover {
             transform: scale(1.03);
         }
@@ -81,6 +87,16 @@
         .botones {
             margin-top: 20px;
         }
+        @keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
     </style>
 </head>
 <body>
@@ -125,7 +141,6 @@
 <footer>
     <p>© 2026 Criadero Happy Pets</p>
     <p>Universidad De cundinamarca</p>
-    <p>fusagasuga</p>
-</footer>
+    <p> Fusagasugá, Colombia</p>
 </body>
 </html>

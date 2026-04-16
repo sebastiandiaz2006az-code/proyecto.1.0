@@ -2,87 +2,122 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cachorros disponibles</title>
+    <title>Cachorros - Imperio Canino</title>
+
     <style>
         body {
             font-family: Arial;
             background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        header {
+            background-color: #2E7D32;
+            color: white;
+            text-align: center;
             padding: 20px;
         }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
         .card {
             background: white;
+            width: 280px;
             padding: 15px;
-            margin: 15px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: 0.3s;
         }
-        .volver {
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .boton {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 15px;
+            margin-top: 10px;
+            padding: 10px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
             border-radius: 5px;
         }
-         h2 {
-            color: #2E7D32;
+
+        .boton:hover {
+            background-color: #2E7D32;
         }
-        img {
-    width: 30%;
-    border-radius: 10px;
-    margin-top: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-    }
-        .volver:hover {
-            background-color: #388E3C;
+
+        .volver {
+            display: block;
+            text-align: center;
+            margin: 20px;
         }
     </style>
 </head>
+
 <body>
-<h1>🐶 Cachorros disponibles</h1>
-<div class="card">
-    <h2>Bulldog</h2>
-    <img src="imagenes/bulldog.jpg" width="200">
-    <p>Edad: 2 meses</p>
-     <p><strong>“Hola… soy Bruno 🐾”</strong></p>
-    <p>
-        Hola, me llamo Bruno y soy un pequeño bulldog lleno de amor.
-        Me encanta jugar, dormir cerquita de las personas y hacerte compañía.
-    </p>
-    <p>
-        Solo estoy esperando una familia que me quiera. Prometo ser tu mejor amigo
-        y llenarte de alegría todos los días ❤️
-    </p>
+
+<header>
+    <h1>🐶 Cachorros Disponibles</h1>
+    <p>Encuentra tu mejor amigo 🐾</p>
+</header>
+
+<div class="container">
+
+    <!-- Bulldog -->
+    <div class="card">
+        <h2>🐶 Bulldog - Bruno</h2>
+        <img src="imagenes/bulldog.jpg">
+
+        <p><strong>“Hola, soy Bruno 🐾”</strong></p>
+        <p>Pequeño, juguetón y muy amoroso ❤️</p>
+
+        <a href="https://wa.me/573228146823" class="boton">💬 Adoptar</a>
+    </div>
+
+    <!-- Husky -->
+    <div class="card">
+        <h2>🐺 Husky - Luna</h2>
+        <img src="imagenes/husky.jpg">
+
+        <p><strong>“Hola, soy Luna ❄️”</strong></p>
+        <p>Llena de energía y lista para jugar 🌿</p>
+
+        <a href="https://wa.me/573228146823" class="boton">💬 Adoptar</a>
+    </div>
+
+    <!-- Pastor Alemán -->
+    <div class="card">
+        <h2>🐕 Pastor Alemán - Max</h2>
+        <img src="imagenes/pastor.jpg">
+
+        <p><strong>“Hola, soy Max 🛡️”</strong></p>
+        <p>Leal, protector y muy inteligente 👀</p>
+
+        <a href="https://wa.me/573228146823" class="boton">💬 Adoptar</a>
+    </div>
+
 </div>
-<div class="card">
-    <h2>Husky</h2>
-    <img src="imagenes/husky.jpg" width="200">
-    <p>Edad: 3 meses</p>
-    <p><strong>“¡Hola! Soy Luna 🐾”</strong></p>
-    <p>
-        Soy una husky llena de energía, me encanta jugar, correr y vivir aventuras.
-        Siempre estoy lista para sacarte una sonrisa.
-    </p>
-    <p>
-        Busco una familia que me quiera y me acompañe en cada momento.
-        Prometo ser tu mejor amiga y llenarte de amor ❤️
-    </p>
+
+<div class="volver">
+    <a href="index.html" class="boton">⬅ Volver al inicio</a>
 </div>
-<div class="card">
-    <h2>Pastor Alemán</h2>
-    <img src="imagenes/pastor.jpg" width="200">
-    <p>Edad: 2 meses</p>
-    <p><strong>“Hola, soy Max 🐾”</strong></p>
-    <p>
-        Soy un perro leal, inteligente y protector. Siempre estoy atento y listo
-        para cuidar a mi familia.
-    </p>
-    <p>
-        También soy muy cariñoso y fiel. Prometo acompañarte, protegerte y darte
-        todo mi amor cada día ❤️
-    </p>
-</div>
-<a href="index.html" class="volver">⬅ Volver al inicio</a>
 </body>
 </html>
