@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Nosotros - La Manada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Imperio Canino</title>
 
     <style>
         body {
@@ -12,13 +13,15 @@
         }
 
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(45deg, #2E7D32, #4CAF50);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
         }
 
         .container {
+            max-width: 900px;
+            margin: auto;
             padding: 20px;
         }
 
@@ -27,32 +30,60 @@
             padding: 20px;
             margin: 20px 0;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: 0.3s;
+            animation: aparecer 0.8s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
         }
 
         h2 {
             color: #2E7D32;
         }
 
-       img {
-    width: 70%;
-    border-radius: 10px;
-    margin-top: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        img {
+            width: 70%;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
         }
 
         .volver {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 15px;
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            padding: 12px 20px;
             background-color: #4CAF50;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
+            width: fit-content;
         }
 
         .volver:hover {
-            background-color: #388E3C;
+            background-color: #2E7D32;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -61,7 +92,7 @@
 
 <header>
     <h1>🐾 Sobre Nosotros</h1>
-    <p>Conoce más sobre La Manada</p>
+    <p>Conoce más sobre Imperio Canino</p>
 </header>
 
 <div class="container">
@@ -69,11 +100,11 @@
     <div class="card">
         <h2>🐶 Nuestra historia</h2>
         <p>
-            En La Manada nos dedicamos a la crianza responsable de perros, brindando amor,
+            En Imperio Canino nos dedicamos a la crianza responsable de perros, brindando amor,
             cuidado y atención desde el primer día. Nuestro objetivo es conectar a cada
             cachorro con una familia que lo ame.
         </p>
-        <img src="imagenes/familia.jpg" width="200">
+        <img src="imagenes/familia.jpg">
     </div>
 
     <div class="card">
@@ -82,16 +113,16 @@
             Garantizar animales sanos, felices y bien cuidados, promoviendo el respeto y el amor
             por los animales.
         </p>
-        <img src="imagenes/ayudando.jpg" width="200">
+        <img src="imagenes/ayudando.jpg">
     </div>
 
     <div class="card">
         <h2>🌟 ¿Por qué elegirnos?</h2>
         <p>
-            ✔️ Criadero responsable  
-            ✔️ Atención personalizada  
-            ✔️ Animales saludables  
-            ✔️ Acompañamiento al cliente  
+            ✔️ Criadero responsable <br>
+            ✔️ Atención personalizada <br>
+            ✔️ Animales saludables <br>
+            ✔️ Acompañamiento al cliente
         </p>
     </div>
 

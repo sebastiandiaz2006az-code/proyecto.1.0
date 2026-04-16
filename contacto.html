@@ -2,29 +2,37 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contacto - La Manada</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Imperio Canino</title>
+
     <style>
         body {
             font-family: Arial;
             margin: 0;
             background-color: #f4f4f4;
         }
+
         header {
-            background-color: #4CAF50;
+            background: #2E7D32;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
         }
+
         .container {
+            max-width: 600px;
+            margin: auto;
             padding: 20px;
         }
+
         .card {
             background: white;
             padding: 20px;
-            margin: 20px 0;
+            margin-top: 20px;
             border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
         }
+
         input, textarea {
             width: 100%;
             padding: 10px;
@@ -32,9 +40,10 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+
         button {
             margin-top: 10px;
-            padding: 10px;
+            padding: 12px;
             width: 100%;
             background-color: #4CAF50;
             color: white;
@@ -44,16 +53,29 @@
         }
 
         button:hover {
-            background-color: #388E3C;
+            background-color: #2E7D32;
         }
-        .volver {
-            display: inline-block;
+
+        .boton {
+            display: block;
+            text-align: center;
             margin-top: 15px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
+            padding: 12px;
+            background-color: #25D366;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .boton:hover {
+            background-color: #1ebe5d;
+        }
+
+        .volver {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -62,16 +84,17 @@
 
 <header>
     <h1>📞 Contáctanos</h1>
-    <p>Estamos para ayudarte 🐾</p>
+    <p>Estamos listos para ayudarte 🐾</p>
 </header>
 
 <div class="container">
 
     <div class="card">
         <h2>📱 Información</h2>
-        <p>Teléfono: 322-814-6823</p>
-        <p>Teléfono: 312-305-7555</p>
-        <p>Email: sebastiandiaz2006az@gmail.com</p>
+        <p>📞 322-814-6823</p>
+        <p>📞 312-305-7555</p>
+        <p>📧 sebastiandiaz2006az@gmail.com</p>
+        <p>📍 Fusagasugá, Colombia</p>
     </div>
 
     <div class="card">
@@ -81,11 +104,19 @@
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="Tu correo" required>
             <textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit">Enviar mensaje</button>
         </form>
+
+        <a href="https://wa.me/573228146823" class="boton">
+            💬 Escríbenos por WhatsApp
+        </a>
     </div>
 
-    <a href="index.html" class="volver">⬅ Volver al inicio</a>
+    <div class="volver">
+        <a href="index.html" class="boton" style="background:#4CAF50;">
+            ⬅ Volver al inicio
+        </a>
+    </div>
 
 </div>
 
