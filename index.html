@@ -2,145 +2,183 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Imperio Canino </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imperio Equino</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        nav {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-image: url("imagenes/portada.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
+
+        nav {
+            background-color: #3E2723;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
         nav a {
             color: white;
-            margin: 10px;
+            margin: 15px;
             text-decoration: none;
             font-weight: bold;
         }
-        nav a:hover {
-            color: #4CAF50;
-        }
-        .container {
-            padding: 20px;
-        }
-       .card {
-    background: white;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
 
-    animation: aparecer 1s ease;
-}
-        .card:hover {
-            transform: scale(1.03);
+        nav a:hover {
+            color: #D7CCC8;
         }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-        .boton {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .boton:hover {
-            background-color: #388E3C;
-        }
+
         .hero {
-            background-image: url("imagenes/portada.jpg");
+            background-image: url("imagenes/portada-caballos.jpg");
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 70vh;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         .overlay {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 40px;
             border-radius: 10px;
             text-align: center;
             color: white;
         }
+
         .overlay h1 {
             font-size: 50px;
             margin-bottom: 10px;
         }
+
         .overlay p {
             font-size: 20px;
         }
-        .botones {
-            margin-top: 20px;
+
+        .boton {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 18px;
+            background-color: #6D4C41;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
         }
+
+        .boton:hover {
+            background-color: #4E342E;
+            transform: scale(1.05);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: 0.3s;
+            animation: aparecer 1s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #3E2723;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
         @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 30px;
+    border-radius: 100px;
+    padding: 30px;
 }
     </style>
 </head>
+
 <body>
+
 <nav>
-    <a href="#">Inicio</a>
-    <a href="cachorros.html">Cachorros</a>
+    <a href="index.html">Inicio</a>
+    <a href="caballos.html">Caballos</a>
+    <a href="cuidados.html">Cuidados</a>
     <a href="nosotros.html">Nosotros</a>
     <a href="contacto.html">Contacto</a>
 </nav>
+
 <header class="hero">
     <div class="overlay">
-        <h1>🐾 Imperio Canino</h1>
-        <p>Bienvenido al parche más fiel 🐶🔥</p>
-        <div class="botones">
-        </div>
+        <h1>🐎 Imperio Equino</h1>
+        <p>Elegancia, fuerza y nobleza en cada paso</p>
+        <a href="caballos.html" class="boton">Ver Caballos</a>
     </div>
 </header>
+
 <div class="container">
+
     <div class="card">
-        <h2 class="titulo">🐾 Bienvenido a Imperio Canino</h2>
-        <p class="bienvenida">
-            Bienvenido a la manada 🐾 — donde comienza tu mejor amistad
-        </p>
-        <p class="descripcion">
-            Somos un criadero especializado en animales sanos, felices y bien cuidados.
-        </p>
-        <a href="nosotros.html" class="boton">⬅ Quieres saber quienes somos</a>
+        <h2>🐎 Nuestros Caballos</h2>
+        <p>Contamos con ejemplares de alta calidad, entrenados y en excelente estado de salud.</p>
+        <a href="caballos.html" class="boton">Ver catálogo</a>
     </div>
+
     <div class="card">
-        <h2>🐶 Cachorros disponibles</h2>
-        <p>Tenemos diferentes razas disponibles. Contáctanos para más información.</p>
-        <a href="cachorros.html" class="boton">⬅ Ver nuestros cachorros</a>
+        <h2>🥕 Cuidados</h2>
+        <p>Conoce la alimentación, medicamentos y cuidados necesarios para el bienestar equino.</p>
+        <a href="cuidados.html" class="boton">Ver información</a>
     </div>
+
+    <div class="card">
+        <h2>👨‍🌾 Nosotros</h2>
+        <p>Somos un criadero comprometido con la crianza responsable y el bienestar animal.</p>
+        <a href="nosotros.html" class="boton">Conócenos</a>
+    </div>
+
     <div class="card">
         <h2>📞 Contacto</h2>
-        <p>📱 322-814-6823</p>
-        <p>📱 312-305-7555</p>
-        <p>📧 sebastiandiaz2006az@gmail.com</p>
-        <a href="contacto.html" class="boton">⬅ Escribenos</a>
+        <p>Comunícate con nosotros para más información o reservas.</p>
+        <a href="contacto.html" class="boton">Contáctanos</a>
     </div>
+
 </div>
+
 <footer>
-    <p>© 2026 Criadero Happy Pets</p>
-    <p>Universidad De cundinamarca</p>
-    <p> Fusagasugá, Colombia</p>
+    <p>© 2026 Imperio Equino</p>
+    <p>Universidad de Cundinamarca</p>
+    <p>Fusagasugá, Colombia</p>
+</footer>
+
 </body>
 </html>
