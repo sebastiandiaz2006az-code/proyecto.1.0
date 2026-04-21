@@ -1,101 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Nosotros - La Manada</title>
+<meta charset="UTF-8">
+<title>Nosotros - Criadero Equino</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+/* HERO (imagen grande arriba) */
+.hero {
+    background: url("imagenes/portada.jpg") center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .container {
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #2E7D32;
-        }
-
-       img {
-    width: 70%;
+.hero-text {
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
     border-radius: 10px;
-    margin-top: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-        }
+    color: white;
+    text-align: center;
+}
 
-        .volver {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+.hero-text h1 {
+    font-size: 45px;
+}
 
-        .volver:hover {
-            background-color: #388E3C;
-        }
-    </style>
+/* NAV */
+nav {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #3E2723;
+}
+
+/* CONTENEDOR */
+.container {
+    padding: 30px;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+
+    animation: aparecer 1s ease;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+/* GRID VALORES */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CAJAS DE VALORES */
+.valor {
+    background: #3E2723;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* BOTON */
+.volver {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #3E2723;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.volver:hover {
+    background-color: #3E2723;
+}
+
+/* ANIMACION */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>🐾 Sobre Nosotros</h1>
-    <p>Conoce más sobre La Manada</p>
-</header>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-text">
+        <h1>🐎 Sobre Nosotros</h1>
+        <p>Pasión, disciplina y amor por los caballos</p>
+    </div>
+</div>
+
+<!-- NAV -->
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="caballos.html">Caballos</a>
+    <a href="cuidados.html">Cuidados</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+</nav>
 
 <div class="container">
 
-    <div class="card">
-        <h2>🐶 Nuestra historia</h2>
-        <p>
-            En La Manada nos dedicamos a la crianza responsable de perros, brindando amor,
-            cuidado y atención desde el primer día. Nuestro objetivo es conectar a cada
-            cachorro con una familia que lo ame.
-        </p>
-        <img src="imagenes/familia.jpg" width="200">
-    </div>
+<!-- HISTORIA -->
+<div class="card">
+    <h2>📖 Nuestra Historia</h2>
+    <p>
+        Somos un criadero equino dedicado a la crianza responsable de caballos,
+        enfocados en la calidad, el bienestar animal y la conexión entre el caballo y su dueño.
+        Desde nuestros inicios, hemos trabajado con pasión para ofrecer ejemplares
+        fuertes, saludables y con excelente temperamento.
+    </p>
+</div>
 
-    <div class="card">
-        <h2>❤️ Nuestra misión</h2>
-        <p>
-            Garantizar animales sanos, felices y bien cuidados, promoviendo el respeto y el amor
-            por los animales.
-        </p>
-        <img src="imagenes/ayudando.jpg" width="200">
-    </div>
+<!-- MISION -->
+<div class="card">
+    <h2> Nuestra Misión</h2>
+    <p>
+        Brindar caballos de alta calidad, bien cuidados y entrenados,
+        garantizando bienestar animal y satisfacción a nuestros clientes.
+    </p>
+</div>
 
-    <div class="card">
-        <h2>🌟 ¿Por qué elegirnos?</h2>
-        <p>
-            ✔️ Criadero responsable  
-            ✔️ Atención personalizada  
-            ✔️ Animales saludables  
-            ✔️ Acompañamiento al cliente  
-        </p>
-    </div>
+<!-- VISION -->
+<div class="card">
+    <h2> Nuestra Visión</h2>
+    <p>
+        Ser un criadero reconocido a nivel nacional por la excelencia en la
+        crianza, cuidado y entrenamiento de caballos.
+    </p>
+</div>
 
-    <a href="index.html" class="volver">⬅ Volver al inicio</a>
+<!-- VALORES -->
+<div class="card">
+    <h2> Nuestros Valores</h2>
+
+    <div class="grid">
+        <div class="valor">❤️ Amor por los animales</div>
+        <div class="valor"> Compromiso</div>
+        <div class="valor"> Responsabilidad</div>
+        <div class="valor"> Calidad</div>
+    </div>
+</div>
+
+<a href="index.html" class="volver">⬅ Volver al inicio</a>
 
 </div>
 

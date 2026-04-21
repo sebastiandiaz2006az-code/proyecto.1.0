@@ -1,121 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Imperio Canino</title>
+<meta charset="UTF-8">
+<title>Contacto - Criadero Equino</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+<style>
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
 
-        header {
-            background: #2E7D32;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+    background-image: url("imagenes/contactos.avif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-        }
+/* NAV */
+nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-        }
+nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+nav a:hover {
+    color: #0071e3;
+}
 
-        button {
-            margin-top: 10px;
-            padding: 12px;
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
 
-        button:hover {
-            background-color: #2E7D32;
-        }
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
 
-        .boton {
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-            padding: 12px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+.hero p {
+    color: #555;
+    font-size: 18px;
+}
 
-        .boton:hover {
-            background-color: #1ebe5d;
-        }
+/* CONTENEDOR */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
 
-        .volver {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+/* CARD */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    animation: aparecer 1s ease;
+}
+
+/* INPUTS */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #0071e3;
+}
+
+/* BOTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+/* INFO */
+.info {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
+/* ANIMACION */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<nav>
+    <a href="index.html">Inicio</a>
+    <a href="caballos.html">Caballos</a>
+    <a href="cuidados.html">Cuidados</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+</nav>
+
+<div class="hero">
     <h1>📞 Contáctanos</h1>
-    <p>Estamos listos para ayudarte 🐾</p>
-</header>
+    <p>Estamos listos para ayudarte a encontrar tu caballo ideal</p>
+</div>
 
 <div class="container">
 
     <div class="card">
-        <h2>📱 Información</h2>
-        <p>📞 322-814-6823</p>
-        <p>📞 312-305-7555</p>
-        <p>📧 sebastiandiaz2006az@gmail.com</p>
-        <p>📍 Fusagasugá, Colombia</p>
-    </div>
-
-    <div class="card">
-        <h2>✉️ Envíanos un mensaje</h2>
 
         <form>
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu correo" required>
-            <textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="text" placeholder="Teléfono">
+            <textarea rows="4" placeholder="Escribe tu mensaje..."></textarea>
+
             <button type="submit">Enviar mensaje</button>
         </form>
 
-        <a href="https://wa.me/573228146823" class="boton">
-            💬 Escríbenos por WhatsApp
-        </a>
+        <div class="info">
+            <p>📱 322-814-6823</p>
+            <p>📱 312-305-7555</p>
+            <p>📧 sebastiandiaz2006az@gmail.com</p>
+        </div>
+
     </div>
-    <div class="volver">
-        <a href="index.html" class="boton" style="background:#4CAF50;">
-            ⬅ Volver al inicio
-        </a>
-    </div>
+
 </div>
+
 </body>
 </html>
