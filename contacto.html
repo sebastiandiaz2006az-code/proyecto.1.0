@@ -2,112 +2,111 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Contacto - Criadero Equino</title>
+<title>Contacto - Imperio Equino</title>
 
 <style>
- body {
-    font-family: Arial, sans-serif;
+body {
     margin: 0;
-
-    background-image: url("imagenes/contactos.avif");
+    font-family: Arial;
+    background: url("imagenes/portada.jpg") no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+}
+
+/* CAPA OSCURA */
+.overlay-bg {
+    background-color: rgba(0,0,0,0.6);
+    min-height: 100vh;
 }
 
 /* NAV */
 nav {
-    background: white;
+    background-color: #5a3e2b;
     padding: 15px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
 }
 
 nav a {
+    color: white;
     margin: 10px;
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #0071e3;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 60px 20px 30px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    color: #555;
-    font-size: 18px;
+    color: #d2a679;
 }
 
 /* CONTENEDOR */
 .container {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 40px;
 }
 
 /* CARD */
-.card {
-    background: white;
+.formulario {
+    background: rgba(255,255,255,0.95);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 15px;
     width: 350px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    color: black;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
     animation: aparecer 1s ease;
 }
 
 /* INPUTS */
 input, textarea {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin: 10px 0;
-    border-radius: 10px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 14px;
 }
 
-input:focus, textarea:focus {
-    outline: none;
-    border-color: #0071e3;
-}
-
-/* BOTON */
+/* BOTONES */
 button {
     width: 100%;
     padding: 12px;
-    background: #0071e3;
+    background-color: #5a3e2b;
     color: white;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
-    background: #005bb5;
+    background-color: #3e2a1d;
 }
 
-/* INFO */
-.info {
+/* WHATSAPP */
+.whatsapp {
+    display: block;
     text-align: center;
-    margin-top: 20px;
-    color: #555;
+    margin-top: 10px;
+    padding: 10px;
+    background: #25D366;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
-.info p {
-    margin: 5px 0;
+.whatsapp:hover {
+    background: #1ebe5d;
+}
+
+/* MENSAJE */
+.mensaje {
+    display: none;
+    text-align: center;
+    color: green;
+    margin-top: 10px;
+}
+
+/* MAPA */
+.mapa {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 /* ANIMACION */
@@ -122,43 +121,60 @@ button:hover {
     }
 }
 </style>
+
+<script>
+function enviarFormulario(event) {
+    event.preventDefault();
+    document.getElementById("mensaje").style.display = "block";
+}
+</script>
+
 </head>
 
 <body>
+
+<div class="overlay-bg">
 
 <nav>
     <a href="index.html">Inicio</a>
     <a href="caballos.html">Caballos</a>
     <a href="cuidados.html">Cuidados</a>
     <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
 </nav>
-
-<div class="hero">
-    <h1>📞 Contáctanos</h1>
-    <p>Estamos listos para ayudarte a encontrar tu caballo ideal</p>
-</div>
 
 <div class="container">
 
-    <div class="card">
+    <div class="formulario">
+        <h2 style="text-align:center;">📩 Contáctanos</h2>
 
-        <form>
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <input type="text" placeholder="Teléfono">
-            <textarea rows="4" placeholder="Escribe tu mensaje..."></textarea>
+        <form onsubmit="enviarFormulario(event)">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo" required>
+            <textarea placeholder="Escribe tu mensaje..." rows="4" required></textarea>
 
             <button type="submit">Enviar mensaje</button>
+
+            <div id="mensaje" class="mensaje">
+                ✅ Mensaje enviado correctamente
+            </div>
         </form>
 
-        <div class="info">
-            <p>📱 322-814-6823</p>
-            <p>📱 312-305-7555</p>
-            <p>📧 sebastiandiaz2006az@gmail.com</p>
+        <!-- WHATSAPP -->
+        <a class="whatsapp" href="https://wa.me/573228146823" target="_blank">
+            💬 Escribir por WhatsApp
+        </a>
+
+        <!-- MAPA -->
+        <div class="mapa">
+           <iframe 
+    src="https://www.google.com/maps?q=Cra+6+41,+Fusagasuga,+Colombia&output=embed"
+    width="100%" height="200" style="border:0;">
+</iframe>
         </div>
 
     </div>
+
+</div>
 
 </div>
 
