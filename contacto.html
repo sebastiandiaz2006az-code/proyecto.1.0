@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Contacto - Imperio Equino</title>
-
 <style>
 body {
     margin: 0;
@@ -11,20 +10,15 @@ body {
     background: url("imagenes/portada.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-
-/* CAPA OSCURA */
 .overlay-bg {
     background-color: rgba(0,0,0,0.6);
     min-height: 100vh;
 }
-
-/* NAV */
 nav {
     background-color: #5a3e2b;
     padding: 15px;
     text-align: center;
 }
-
 nav a {
     color: white;
     margin: 10px;
@@ -35,15 +29,11 @@ nav a {
 nav a:hover {
     color: #d2a679;
 }
-
-/* CONTENEDOR */
 .container {
     display: flex;
     justify-content: center;
     padding: 40px;
 }
-
-/* CARD */
 .formulario {
     background: rgba(255,255,255,0.95);
     padding: 30px;
@@ -53,8 +43,6 @@ nav a:hover {
     box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
     animation: aparecer 1s ease;
 }
-
-/* INPUTS */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -62,8 +50,6 @@ input, textarea {
     border-radius: 8px;
     border: 1px solid #ccc;
 }
-
-/* BOTONES */
 button {
     width: 100%;
     padding: 12px;
@@ -73,12 +59,9 @@ button {
     border-radius: 8px;
     cursor: pointer;
 }
-
 button:hover {
     background-color: #3e2a1d;
 }
-
-/* WHATSAPP */
 .whatsapp {
     display: block;
     text-align: center;
@@ -89,27 +72,20 @@ button:hover {
     border-radius: 8px;
     text-decoration: none;
 }
-
 .whatsapp:hover {
     background: #1ebe5d;
 }
-
-/* MENSAJE */
 .mensaje {
     display: none;
     text-align: center;
     color: green;
     margin-top: 10px;
 }
-
-/* MAPA */
 .mapa {
     margin-top: 20px;
     border-radius: 10px;
     overflow: hidden;
 }
-
-/* ANIMACION */
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -121,62 +97,72 @@ button:hover {
     }
 }
 </style>
-
-<script>
-function enviarFormulario(event) {
-    event.preventDefault();
-    document.getElementById("mensaje").style.display = "block";
-}
-</script>
-
 </head>
-
 <body>
-
 <div class="overlay-bg">
-
 <nav>
     <a href="index.html">Inicio</a>
     <a href="caballos.html">Caballos</a>
     <a href="cuidados.html">Cuidados</a>
     <a href="nosotros.html">Nosotros</a>
 </nav>
-
 <div class="container">
-
     <div class="formulario">
         <h2 style="text-align:center;">📩 Contáctanos</h2>
 
-        <form onsubmit="enviarFormulario(event)">
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu correo" required>
-            <textarea placeholder="Escribe tu mensaje..." rows="4" required></textarea>
-
+        <!-- FORMULARIO CORREGIDO -->
+        <form id="formulario">
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+            <input type="email" id="correo" placeholder="Tu correo" required>
+            <textarea id="mensajeTexto" placeholder="Escribe tu mensaje..." rows="4" required></textarea>
             <button type="submit">Enviar mensaje</button>
-
             <div id="mensaje" class="mensaje">
-                ✅ Mensaje enviado correctamente
+                 Mensaje enviado correctamente
             </div>
         </form>
-
-        <!-- WHATSAPP -->
         <a class="whatsapp" href="https://wa.me/573228146823" target="_blank">
             💬 Escribir por WhatsApp
         </a>
-
-        <!-- MAPA -->
         <div class="mapa">
            <iframe 
     src="https://www.google.com/maps?q=Cra+6+41,+Fusagasuga,+Colombia&output=embed"
     width="100%" height="200" style="border:0;">
 </iframe>
         </div>
-
     </div>
-
 </div>
-
 </div>
-
+<!--  FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyBEZ7pO7rzQb4SG7KyYYwscFrbkTUJPq_k",
+  authDomain: "imperio-equino.firebaseapp.com",
+  projectId: "imperio-equino",
+  storageBucket: "imperio-equino.firebasestorage.app",
+  messagingSenderId: "577597354570",
+  appId: "1:577597354570:web:45048f29711b16e622ecb3"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+document.getElementById("formulario").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+    const mensajeTexto = document.getElementById("mensajeTexto").value;
+    try {
+        await addDoc(collection(db, "contactos"), {
+            nombre: nombre,
+            correo: correo,
+            mensaje: mensajeTexto
+        });
+        document.getElementById("mensaje").style.display = "block";
+        document.getElementById("formulario").reset();
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});
+</script>
 </body>
 </html>
