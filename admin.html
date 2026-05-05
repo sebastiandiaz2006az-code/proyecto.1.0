@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Admin</title>
+<style>
+body {
+    font-family: Arial;
+    background: #3E2723;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+}
+input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 200px;
+}
+button {
+    padding: 10px;
+    background: #6D4C41;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h2>🔐 Panel Administrador</h2>
+<input type="text" id="usuario" placeholder="Usuario">
+<input type="password" id="clave" placeholder="Contraseña">
+<button onclick="login()">Entrar</button>
+<script>
+function login() {
+    const user = document.getElementById("usuario").value;
+    const pass = document.getElementById("clave").value;
+    if(user === "admin" && pass === "1234"){
+        window.location.href = "panel.html";
+    } else {
+        alert("Datos incorrectos");
+    }
+}
+</script>
+</body>
+</html>

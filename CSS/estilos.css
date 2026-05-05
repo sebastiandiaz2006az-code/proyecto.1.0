@@ -1,0 +1,57 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+/* HEADER */
+header {
+    background: #3E2723;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* FORMULARIO */
+.formulario {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+/* INPUTS */
+input {
+    margin: 8px;
+    padding: 10px;
+    width: 200px;
+}
+
+/* BOTONES */
+button {
+    padding: 10px;
+    background: #6D4C41;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4E342E;
+}
+
+/* LISTA */
+.lista {
+    padding: 20px;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}

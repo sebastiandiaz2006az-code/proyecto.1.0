@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel Admin</title>
+<style>
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+    padding: 20px;
+}
+input {
+    margin: 5px;
+    padding: 8px;
+}
+button {
+    padding: 8px;
+    background: #6D4C41;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.card {
+    background: white;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+</style>
+</head>
+<body>
+<h2>🐎 Panel de Caballos (CRUD)</h2>
+<input type="text" id="nombre" placeholder="Nombre">
+<input type="number" id="edad" placeholder="Edad">
+<input type="text" id="tipo" placeholder="Tipo">
+<button onclick="agregar()">Agregar</button>
+<hr>
+<div id="lista"></div>
+<!-- FIREBASE -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBEZ7pO7rzQb4SG7KyYYwscFrbkTUJPq_k",
+  authDomain: "imperio-equino.firebaseapp.com",
+  projectId: "imperio-equino",
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+// CREATE
+window.agregar = async function() {
+    const nombre = document.getElementById("nombre").value;
+    const edad = document.getElementById("edad").value;
+    const tipo = document.getElementById("tipo").value;
+
+    await addDoc(collection(db, "caballos"), {
+        nombre, edad, tipo
+    });
+
+    cargar();
+}
+// READ
+async function cargar() {
+    const lista = document.getElementById("lista");
+    lista.innerHTML = "";
+    const querySnapshot = await getDocs(collection(db, "caballos"));
+    querySnapshot.forEach((docu) => {
+        const data = docu.data();
+
+        lista.innerHTML += `
+            <div class="card">
+                <h3>${data.nombre}</h3>
+                <p>Edad: ${data.edad}</p>
+                <p>Tipo: ${data.tipo}</p>
+                <button onclick="eliminar('${docu.id}')">Eliminar</button>
+            </div>
+        `;
+    });
+}
+// DELETE
+window.eliminar = async function(id) {
+    await deleteDoc(doc(db, "caballos", id));
+    cargar();
+}
+// cargar al inicio
+cargar();
+</script>
+</body>
+</html>

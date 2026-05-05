@@ -29,6 +29,33 @@ nav a:hover {
     color: #D7CCC8;
 }
 
+/* VIDEO PORTADA */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXTO SOBRE VIDEO */
+.video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
 /* HEADER */
 header {
     background-color: #5D4037;
@@ -120,10 +147,17 @@ header {
     <a href="nosotros.html">Nosotros</a>
 </nav>
 
-<header>
-    <h1>🐎 Nuestros Caballos</h1>
-    <p>Ejemplares disponibles de alta calidad</p>
-</header>
+<!-- 🎥 VIDEO AUTOMÁTICO -->
+<div class="video-container">
+    <video autoplay muted loop>
+        <source src="imagenes/video-caballos.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-text">
+        <h1>🐎 Nuestros Caballos</h1>
+        <p>Elegancia, fuerza y calidad</p>
+    </div>
+</div>
 
 <div class="container">
 
@@ -135,7 +169,7 @@ header {
             <p><strong>Tipo:</strong> Capa Negra</p>
             <p>Color negro uniforme en todo el cuerpo</p>
             <p>Edad: 5 años</p>
-            <a href="caballo1.html" class="boton">Ver más</a>
+            <a href="caballosventa/caballo1.html" class="boton">Ver más</a>
         </div>
     </div>
 
@@ -147,7 +181,7 @@ header {
             <p><strong>Tipo:</strong> Alazán</p>
             <p>Color rojizo con crines claras</p>
             <p>Edad: 3 años</p>
-            <a href="caballo2.html" class="boton">Ver más</a>
+            <a href="caballosventa/caballo2.html" class="boton">Ver más</a>
         </div>
     </div>
 
@@ -159,7 +193,7 @@ header {
             <p><strong>Tipo:</strong> Bayo</p>
             <p>Pelaje dorado con patas negras</p>
             <p>Edad: 4 años</p>
-            <a href="caballo3.html" class="boton">Ver más</a>
+            <a href="caballosventa/caballo3.html" class="boton">Ver más</a>
         </div>
     </div>
 
@@ -171,7 +205,7 @@ header {
             <p><strong>Tipo:</strong> Pinto</p>
             <p>Manchas blancas con otros colores</p>
             <p>Edad: 2 años</p>
-            <a href="caballo4.html" class="boton">Ver más</a>
+            <a href="caballosventa/caballo4.html" class="boton">Ver más</a>
         </div>
     </div>
 
@@ -182,7 +216,7 @@ header {
             <h3>🐴 Espíritu</h3>
             <p><strong>Raza:</strong> Criollo</p>
             <p>Edad: 1 año</p>
-            <a href="caballo5.html" class="boton">Ver más</a>
+            <a href="caballosventa/caballo5.html" class="boton">Ver más</a>
         </div>
     </div>
 
