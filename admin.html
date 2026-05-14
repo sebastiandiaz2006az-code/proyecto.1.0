@@ -2,45 +2,106 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de Administración - Imperio Equino</title>
+
 <style>
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+header {
     background: #3E2723;
     color: white;
+    padding: 20px;
     text-align: center;
-    padding-top: 100px;
 }
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+    color: #3E2723;
+}
+
+form {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
 input {
-    display: block;
-    margin: 10px auto;
     padding: 10px;
-    width: 200px;
+    font-size: 16px;
 }
+
 button {
-    padding: 10px;
+    padding: 12px;
+    border: none;
     background: #6D4C41;
     color: white;
-    border: none;
     cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #4E342E;
+}
+
+.item-caballo {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.item-caballo button {
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.volver {
+    display: inline-block;
+    margin-top: 20px;
+    color: #3E2723;
+    text-decoration: none;
+    font-weight: bold;
 }
 </style>
 </head>
 <body>
-<h2>🔐 Panel Administrador</h2>
-<input type="text" id="usuario" placeholder="Usuario">
-<input type="password" id="clave" placeholder="Contraseña">
-<button onclick="login()">Entrar</button>
-<script>
-function login() {
-    const user = document.getElementById("usuario").value;
-    const pass = document.getElementById("clave").value;
-    if(user === "admin" && pass === "1234"){
-        window.location.href = "panel.html";
-    } else {
-        alert("Datos incorrectos");
-    }
-}
-</script>
+
+<header>
+    <h1>⚙️ Panel de Administración</h1>
+</header>
+
+<div class="container">
+    <h2>Agregar / Editar Caballo</h2>
+
+    <form id="form-caballo">
+        <input type="text" id="nombre" placeholder="Nombre del caballo" required>
+        <input type="text" id="edad" placeholder="Edad (ej: 5 años)" required>
+        <input type="text" id="imagen" placeholder="Ruta de imagen (ej: imagenes/caballo.jpg)" required>
+        <input type="text" id="enlace" placeholder="Ruta de detalle (ej: caballosventa/caballo6.html)" required>
+
+        <button type="submit">Guardar Caballo</button>
+    </form>
+
+    <h2>Lista de Caballos</h2>
+    <div id="lista-caballos"></div>
+
+    <a href="caballos.html" class="volver">⬅ Ver página de caballos</a>
+</div>
+
+<script src="JS/admin.js"></script>
 </body>
 </html>

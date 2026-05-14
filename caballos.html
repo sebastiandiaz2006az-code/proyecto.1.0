@@ -1,3 +1,6 @@
+# caballos.html (conectado con `js/caballos.js`)
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +11,7 @@
 body {
     font-family: Arial;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #111;
 }
 
 /* NAV */
@@ -16,6 +19,8 @@ nav {
     background-color: #3E2723;
     padding: 12px;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 nav a {
@@ -25,52 +30,73 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #D7CCC8;
-}
-
-/* VIDEO PORTADA */
+/* VIDEO */
 .video-container {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 85vh;
     overflow: hidden;
 }
 
 .video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* TEXTO SOBRE VIDEO */
-.video-text {
     position: absolute;
     top: 50%;
     left: 50%;
+    min-width: 100%;
+    min-height: 100%;
     transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 10px;
+    object-fit: cover;
 }
 
-/* HEADER */
-header {
-    background-color: #5D4037;
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* CAPA OSCURA */
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #111 10%, transparent 60%);
 }
 
-/* CONTENEDOR */
+/* TEXTO */
+.video-text {
+    position: absolute;
+    bottom: 80px;
+    left: 50px;
+    color: white;
+    max-width: 500px;
+}
+
+.video-text h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.video-text p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* BOTÓN SONIDO */
+.sound-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* CONTENEDOR DE TARJETAS */
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 30px;
+    background-color: #f4f4f4;
 }
 
 /* TARJETAS */
@@ -87,25 +113,22 @@ header {
     transform: scale(1.05);
 }
 
-/* IMAGEN */
 .card img {
     width: 100%;
     aspect-ratio: 3/4;
     object-fit: cover;
 }
 
-/* INFO */
 .info {
     padding: 15px;
     text-align: center;
 }
 
 .info h3 {
-    margin: 10px 0;
     color: #3E2723;
+    margin-top: 0;
 }
 
-/* BOTÓN */
 .boton {
     display: inline-block;
     margin-top: 10px;
@@ -147,82 +170,43 @@ header {
     <a href="nosotros.html">Nosotros</a>
 </nav>
 
-<!-- 🎥 VIDEO AUTOMÁTICO -->
+<!-- VIDEO -->
 <div class="video-container">
-    <video autoplay muted loop>
+
+    <video id="miVideo" autoplay muted loop>
         <source src="imagenes/video-caballos.mp4" type="video/mp4">
     </video>
+
+    <div class="video-overlay"></div>
 
     <div class="video-text">
         <h1>🐎 Nuestros Caballos</h1>
         <p>Elegancia, fuerza y calidad</p>
     </div>
-</div>
 
-<div class="container">
-
-    <!-- CABALLO 1 -->
-    <div class="card">
-        <img src="imagenes/caballo.negro.jpg">
-        <div class="info">
-            <h3>Caballo de capa negra</h3>
-            <p><strong>Tipo:</strong> Capa Negra</p>
-            <p>Color negro uniforme en todo el cuerpo</p>
-            <p>Edad: 5 años</p>
-            <a href="caballosventa/caballo1.html" class="boton">Ver más</a>
-        </div>
-    </div>
-
-    <!-- CABALLO 2 -->
-    <div class="card">
-        <img src="imagenes/caballo.cafe.claro.jpg">
-        <div class="info">
-            <h3>Caballo alazán</h3>
-            <p><strong>Tipo:</strong> Alazán</p>
-            <p>Color rojizo con crines claras</p>
-            <p>Edad: 3 años</p>
-            <a href="caballosventa/caballo2.html" class="boton">Ver más</a>
-        </div>
-    </div>
-
-    <!-- CABALLO 3 -->
-    <div class="card">
-        <img src="imagenes/caballo.cafe,brillante.oscuro.jpg">
-        <div class="info">
-            <h3>Caballo bayo</h3>
-            <p><strong>Tipo:</strong> Bayo</p>
-            <p>Pelaje dorado con patas negras</p>
-            <p>Edad: 4 años</p>
-            <a href="caballosventa/caballo3.html" class="boton">Ver más</a>
-        </div>
-    </div>
-
-    <!-- CABALLO 4 -->
-    <div class="card">
-        <img src="imagenes/caballo.manchas. blancas.jpg">
-        <div class="info">
-            <h3>Caballo Pinto</h3>
-            <p><strong>Tipo:</strong> Pinto</p>
-            <p>Manchas blancas con otros colores</p>
-            <p>Edad: 2 años</p>
-            <a href="caballosventa/caballo4.html" class="boton">Ver más</a>
-        </div>
-    </div>
-
-    <!-- CABALLO 5 -->
-    <div class="card">
-        <img src="imagenes/caballo.bebe.jpg">
-        <div class="info">
-            <h3>🐴 Espíritu</h3>
-            <p><strong>Raza:</strong> Criollo</p>
-            <p>Edad: 1 año</p>
-            <a href="caballosventa/caballo5.html" class="boton">Ver más</a>
-        </div>
-    </div>
+    <button class="sound-btn" onclick="toggleSound()">🔇</button>
 
 </div>
+
+<!-- CONTENEDOR DINÁMICO -->
+<div class="container" id="caballos-container"></div>
 
 <a href="index.html" class="volver">⬅ Volver al inicio</a>
 
+<!-- SCRIPT AUDIO -->
+<script>
+function toggleSound() {
+    const video = document.getElementById("miVideo");
+    const btn = document.querySelector(".sound-btn");
+
+    video.muted = !video.muted;
+    btn.textContent = video.muted ? "🔇" : "🔊";
+}
+</script>
+
+<!-- SCRIPT QUE CARGA LOS CABALLOS -->
+<script src="js/caballos.js"></script>
+
 </body>
 </html>
+```
