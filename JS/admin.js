@@ -8,11 +8,9 @@ let indiceEditar = null;
 // DATOS INICIALES
 function obtenerCaballos() {
     const datos = localStorage.getItem(STORAGE_KEY);
-
     if (datos) {
         return JSON.parse(datos);
     }
-
     // Caballos por defecto
     const caballosIniciales = [
         {
@@ -46,7 +44,6 @@ function obtenerCaballos() {
             enlace: "caballosventa/caballo5.html"
         }
     ];
-
     localStorage.setItem(STORAGE_KEY, JSON.stringify(caballosIniciales));
     return caballosIniciales;
 }
@@ -57,14 +54,11 @@ function guardarCaballos(caballos) {
 // MOSTRAR LISTA EN EL PANEL ADMIN
 function mostrarCaballos() {
     if (!lista) return;
-
     const caballos = obtenerCaballos();
     lista.innerHTML = "";
-
     caballos.forEach((caballo, index) => {
         const item = document.createElement("div");
         item.className = "item-caballo";
-
         item.innerHTML = `
             <strong>${caballo.nombre}</strong> - ${caballo.edad}
             <br>
@@ -72,7 +66,6 @@ function mostrarCaballos() {
             <button onclick="eliminarCaballo(${index})">🗑 Eliminar</button>
             <hr>
         `;
-
         lista.appendChild(item);
     });
 }

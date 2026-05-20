@@ -13,21 +13,26 @@ function mostrarCaballos() {
     container.innerHTML = "";
 
     // Recorrer cada caballo
-    caballos.forEach((caballo) => {
+    caballos.forEach((caballo, index) => {
         const card = document.createElement("div");
         card.className = "card";
 
-        // Ruta segura para "Ver más"
+        // Ruta de detalle:
+        // 1. Usa la ruta guardada en caballo.detalle
+        // 2. Si no existe, usa caballo.link
+        // 3. Si tampoco existe, genera automáticamente
+        //    caballosventa/caballo1.html, caballo2.html, etc.
         const rutaDetalle =
             caballo.detalle && caballo.detalle.trim() !== ""
                 ? caballo.detalle
-                : (caballo.link && caballo.link.trim() !== ""
+                : caballo.link && caballo.link.trim() !== ""
                     ? caballo.link
-                    : "caballosventa/caballo1.html");
+                    : `caballosventa/caballo${index + 1}.html`;
 
         // Valores por defecto
         const raza = caballo.raza || "Criollo";
-        const descripcion = caballo.descripcion || "Caballo disponible en nuestro catálogo.";
+        const descripcion =
+            caballo.descripcion || "Caballo disponible en nuestro catálogo.";
 
         card.innerHTML = `
             <img src="${caballo.imagen}" alt="${caballo.nombre}">
